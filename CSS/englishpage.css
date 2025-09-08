@@ -75,14 +75,11 @@
     object-fit: cover; /* Fyller boksen uten å forvrenge bildet */
     display: block; /* Fjerner ekstra mellomrom under bildet */
  }
- 
- 
- 
- 
+
  .item1 { grid-area: main; }
  .item2 { grid-area: left; }
  
- 
+ /* Grid over */
  
  
  

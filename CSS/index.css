@@ -71,11 +71,11 @@ body {
     'main main main left left left';
   gap: 10px;
   padding: 20px;
-  height: 200px;
- }
- 
- 
- .item1, .item2 {
+  height: 600px;
+}
+
+
+.item1, .item2 {
   padding: 20px;
   border-radius: 8px;
   object-fit: cover;
@@ -83,29 +83,27 @@ body {
   color: #333;
   font-size: 1.1em;
   text-align: center;
- }
- 
- 
- .item1 img {
+}
+
+
+.item1 img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Fyller boksen uten å forvrenge bildet */
   display: block; /* Fjerner ekstra mellomrom under bildet */
- }
- 
- 
- .item2 img {
+}
+
+
+.item2 img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Fyller boksen uten å forvrenge bildet */
   display: block; /* Fjerner ekstra mellomrom under bildet */
- }
- 
- 
- 
- 
- .item1 { grid-area: main; }
- .item2 { grid-area: left; }
+}
+
+.item1 { grid-area: main; }
+.item2 { grid-area: left; }
+
  /* Grid over*/
  
  
