@@ -1,6 +1,5 @@
 .overskrift {
-    background-image: url("/Bilder/test.jpeg");
-    background-color: rgb(161, 229, 241); /* Fjern dette når du har tatt inn bildet*/
+    background-image: url("/Bilder/LondonBilder/LONDON.jpg");
     height: 600px;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -22,6 +21,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
  }
+
+ .high {
+   position: absolute;
+   top: 90%;
+   left: 10%;
+   transform: translate(-50%, -50%);
+}
+
+.boxed-text {
+   border: 2px solid #ffffff; /* Border width, style, and color */
+   padding: 10px; /* Space between text and border */
+   border-radius: 8px; /* Optional: Rounded corners */
+   display: inline-block; /* Adjusts the box to fit the content's width */
+ }
  
  h1 {
     color: rgb(0, 0, 0);
@@ -29,6 +42,12 @@
     text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
  }
  
+ h3 {
+   color: rgb(255, 255, 255);
+   text-align: center;
+   text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
+}
+
  p
  {
    size: 5px;
@@ -107,7 +126,7 @@
    cursor: pointer;
    padding: 14px 16px;
    transition: 0.3s;
-   font-size: 20px;
+   font-size: 25px;
  }
  
  .tab button:hover {
@@ -135,6 +154,10 @@
         background-attachment: scroll; /* bedre ytelse */
     }
  
+    .tap {
+      font-size: 18px;       /* litt større skrift på mobil */
+      padding: 16px 24px;    /* mer plass å trykke på */
+    }
  
     .grid-container {
         grid-template-areas:
@@ -162,6 +185,12 @@
         top: 38%;
     }
  
+    .high {
+      position: absolute;
+      top: 90%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+   }
  
     h1 {
         font-size: 32px;
