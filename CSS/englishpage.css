@@ -1,6 +1,7 @@
 .overskrift {
     background-image: url("/Bilder/test.jpeg");
-    height: 900px;
+    background-color: rgb(161, 229, 241); /* Fjern dette når du har tatt inn bildet*/
+    height: 600px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -15,7 +16,6 @@
     font-size: 50px;
  }
  
- 
  .centered-lower {
     position: absolute;
     top: 50%;
@@ -23,19 +23,16 @@
     transform: translate(-50%, -50%);
  }
  
- 
  h1 {
     color: rgb(0, 0, 0);
     text-align: center;
     text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
  }
  
- 
  p
  {
    size: 5px;
  }
- 
  
  /* ---------- Grid ---------- */
  .grid-container {
@@ -94,7 +91,41 @@
  position: relative;
  }
  
+
+/* Tab styling under */
+.tab {
+   overflow: hidden;
+   border: 1px solid #ccc;
+   background-color: #f1f1f1;
+ }
  
+ .tab button {
+   background-color: inherit;
+   float: left;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   padding: 14px 16px;
+   transition: 0.3s;
+   font-size: 20px;
+ }
+ 
+ .tab button:hover {
+   background-color: #ddd;
+ }
+ 
+ .tab button.active {
+   background-color: #ccc;
+ }
+ 
+ .tabcontent {
+   display: none;
+   padding: 6px 12px;
+   border: 1px solid #ccc;
+   border-top: none;
+ }
+/* Tabs over med styling*/
+
  /* ---------- Mobiltilpasning ---------- */
  @media (max-width: 768px) {
  
