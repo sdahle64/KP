@@ -22,20 +22,20 @@
     transform: translate(-50%, -50%);
  }
 
- .high {
+ .low {
    position: absolute;
    top: 90%;
    left: 10%;
    transform: translate(-50%, -50%);
 }
 
-.boxed-text {
-   border: 2px solid #ffffff; /* Border width, style, and color */
-   padding: 10px; /* Space between text and border */
-   border-radius: 8px; /* Optional: Rounded corners */
-   display: inline-block; /* Adjusts the box to fit the content's width */
+.highlighted-text {
+   padding: 5px 15px; /* Different padding for top/bottom and left/right */
+   border-radius: 22px;
+   background-color: #f0f8ff; /* Optional: Background color inside the box */
  }
  
+
  h1 {
     color: rgb(0, 0, 0);
     text-align: center;
@@ -43,7 +43,7 @@
  }
  
  h3 {
-   color: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
    text-align: center;
    text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
 }
@@ -62,7 +62,7 @@
       'main main main left left left';
     gap: 10px;
     padding: 20px;
-    height: 600px;
+    height: 400px;
  }
  
  
