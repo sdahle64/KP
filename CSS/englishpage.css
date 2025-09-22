@@ -1,6 +1,5 @@
 .overskrift {
     background-image: url("../Bilder/LondonBilder/londonHistory.avif");
-    background-color: #ccc;
     height: 800px;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -65,11 +64,18 @@
 }
 
 .highlighted-text {
-   padding: 5px 15px; /* Different padding for top/bottom and left/right */
-   border-radius: 22px;
-   background-color: #f0f8ff; /* Optional: Background color inside the box */
- }
- 
+  padding: 5px 15px;
+  border-radius: 22px;
+  background-color: #ffffff;
+  box-shadow: 1 2px 5px rgba(0,0,0,0.1);
+}
+
+.highlighted-text-foto {
+  padding: 1px 5px;
+  border-radius: 22px;
+  background-color: #dbcdba;
+  box-shadow: 1 2px 5px rgba(0,0,0,0.1);
+}
 
  h1 {
     color: rgb(0, 0, 0);
