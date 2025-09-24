@@ -11,13 +11,11 @@
    /* Icon bar under */
    body {margin:0;}
  
- 
    .icon-bar {
     width: 100%;
     background-color: #555;
     overflow: auto;
    }
-   
    
    .icon-bar a {
     float: left;
@@ -28,12 +26,10 @@
     color: white;
     font-size: 36px;
    }
-   
-   
+
    .icon-bar a:hover {
     background-color: #000;
    }
-   
    
    .active {
     background-color: #0caade;
@@ -41,58 +37,40 @@
    /* Icon bar over*/
 
 
- .centered {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 50px;
- }
- 
- .centered-lower {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
- }
-
- .low {
-   position: absolute;
-   top: 90%;
-   left: 10%;
-   transform: translate(-50%, -50%);
+/* Tab styling under */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
 
-.highlighted-text {
-  padding: 5px 15px;
-  border-radius: 22px;
-  background-color: #ffffff;
-  box-shadow: 1 2px 5px rgba(0,0,0,0.1);
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 25px;
 }
 
-.highlighted-text-foto {
-  padding: 1px 5px;
-  border-radius: 22px;
-  background-color: #dbcdba;
-  box-shadow: 1 2px 5px rgba(0,0,0,0.1);
+.tab button:hover {
+  background-color: #ddd;
 }
 
- h1 {
-    color: rgb(0, 0, 0);
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
- }
- 
- h3 {
-   color: rgb(0, 0, 0);
-   text-align: center;
-   text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
+.tab button.active {
+  background-color: #ccc;
 }
 
- p
- {
-   size: 5px;
- }
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+/* Tabs over med styling*/
+
  
  /* ---------- Grid ---------- */
  .grid-container {
@@ -135,12 +113,66 @@
 
  .item1 { grid-area: main; }
  .item2 { grid-area: left; }
- 
  /* Grid over */
  
- 
- 
- 
+ a:hover {
+  font-size: 30px;
+}
+
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
+
+.centered-lower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.low {
+ position: absolute;
+ top: 90%;
+ left: 10%;
+ transform: translate(-50%, -50%);
+}
+
+.highlighted-text {
+padding: 5px 15px;
+border-radius: 22px;
+background-color: #ffffff;
+box-shadow: 1 2px 5px rgba(0,0,0,0.1);
+}
+
+.highlighted-text-foto {
+padding: 1px 5px;
+border-radius: 22px;
+background-color: #dbcdba;
+box-shadow: 1 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
+}
+
+h3 {
+ color: rgb(0, 0, 0);
+ text-align: center;
+ text-shadow: 2px 2px 4px rgba(54, 52, 52, 0.5); /* lagt til offset & blur */
+}
+
+p
+{
+ size: 5px;
+}
+
+
  .underside{
  background-color: #dbcdba;
  height: 300px;
@@ -151,40 +183,6 @@
  position: relative;
  }
  
-
-/* Tab styling under */
-.tab {
-   overflow: hidden;
-   border: 1px solid #ccc;
-   background-color: #f1f1f1;
- }
- 
- .tab button {
-   background-color: inherit;
-   float: left;
-   border: none;
-   outline: none;
-   cursor: pointer;
-   padding: 14px 16px;
-   transition: 0.3s;
-   font-size: 25px;
- }
- 
- .tab button:hover {
-   background-color: #ddd;
- }
- 
- .tab button.active {
-   background-color: #ccc;
- }
- 
- .tabcontent {
-   display: none;
-   padding: 6px 12px;
-   border: 1px solid #ccc;
-   border-top: none;
- }
-/* Tabs over med styling*/
 
 /* --- MOBILTILPASNING --- */
 @media (max-width: 768px) {
@@ -256,6 +254,7 @@
      height: auto;
      padding: 20px;
      text-align: center;
+     margin-top: 20px;
    }
  }
  
