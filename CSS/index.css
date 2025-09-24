@@ -70,8 +70,9 @@ body {
     'main main main left left left'
     'main main main left left left';
   gap: 10px;
-  padding: 20px;
-  height: 600px;
+  padding: 30px;
+  height: 400px;
+  margin-bottom: 50px;
 }
 
 
@@ -106,6 +107,14 @@ body {
 
  /* Grid over*/
  
+  
+ .centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
  
  .underside{
   background-color: #bde7e1;
@@ -115,16 +124,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  }
- 
- 
-  .centered {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
- }
+  } 
  
  
  /* ---------- Mobiltilpasning ---------- */
