@@ -60,7 +60,22 @@ body {
  }
  /* Icon bar over*/
  
- 
+ .flex-container {
+  margin-left: 60px;
+  margin-right: 60px;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 500px;
+  margin: 25px;
+  text-align: center;
+  line-height: 300px;
+  font-size: 30px;
+}
  
  /* ---------- Grid ---------- */
  .grid-container {
