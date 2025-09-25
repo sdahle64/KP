@@ -47,26 +47,6 @@ color: white; font-size: 36px; }
   
 .active { background-color: #0caade; }
 
-/* ---------- Flex-container ---------- */
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px;
-  background-color: DodgerBlue;
-  gap: 20px;
-  padding: 20px;
-}
-
-.flex-container > div {
-  background-color: #f1f1f1;
-  flex: 1 1 300px;
-  max-width: 500px;
-  text-align: center;
-  line-height: 300px;
-  font-size: 30px;
-}
-
 /* ---------- Grid ---------- */
 .grid-container {
   display: grid;
