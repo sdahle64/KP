@@ -173,7 +173,7 @@ margin-top: 20px;
 /* --- MOBILTILPASNING --- */
 @media (max-width: 768px) {
   .overskrift {
-    height: 250px; /* gjør headeren mindre på mobil */
+    height: 400px; /* gjør headeren mindre på mobil */
     background-size: cover; /* fortsatt dekker hele headeren */
     background-position: center; 
     padding: 30px 10px; /* litt mindre padding rundt teksten */
