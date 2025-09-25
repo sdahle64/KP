@@ -29,7 +29,7 @@ h1 {
   font-size: 14px;
   }
 
-.centered { 
+.centered {
   font-size: 50px;
   margin: 0;
 }
@@ -107,6 +107,7 @@ border-top: none;
 }
 /* Tabs over med styling*/
 
+
 /* ---------- Grid ---------- */
 .grid-container {
 display: grid;
@@ -158,6 +159,8 @@ background-color: #dbcdba;
 box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
 }
 
+
+
 /* Underside */
 .underside {
 background-color: #dbcdba;
@@ -166,7 +169,7 @@ padding: 20px;
 text-align: center;
 margin-top: 20px;
 }
-/* Underside over */
+/* Underside */
 
 
 /* --- MOBILTILPASNING --- */
@@ -235,6 +238,7 @@ margin-top: 20px;
   text-align: center;
   width: 100%;
 }
+
 
 /* Underside nederst */
 .underside {
