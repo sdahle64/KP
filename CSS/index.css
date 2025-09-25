@@ -1,175 +1,151 @@
+/* ---------- Generelt ---------- */
 body {
-    background-color: rgb(255, 255, 255);
-  }
-   h1 {
-    color: rgb(0, 0, 0);
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 1px 1px;
-    font-size: 33px;
-  }
- 
- 
-  h2 {
-    font-size: 25px;
-    text-shadow: 1px;
-  }
- 
- 
-  h3 {
-    font-size: 10px;
-    text-shadow: 1px;
-  }
- 
- 
-  p {
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-  }
- 
- 
-  /* Icon bar under */
- body {margin:0;}
- 
- 
- .icon-bar {
-  width: 100%;
-  background-color: #555;
-  overflow: auto;
- }
- 
- 
- .icon-bar a {
-  float: left;
-  width: 20%;
+  background-color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+/* ---------- Overskrifter ---------- */
+h1 {
+  color: #000;
   text-align: center;
-  padding: 12px 0;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 36px;
- }
- 
- 
- .icon-bar a:hover {
-  background-color: #000;
- }
- 
- 
- .active {
-  background-color: #0caade;
- }
- /* Icon bar over*/
- 
- .flex-container {
-  margin-left: 60px;
-  margin-right: 60px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  font-size: 33px;
+}
+
+h2 {
+  font-size: 25px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+h3 {
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* ---------- Icon bar ---------- */
+/* Icon bar under */ body {margin:0;} 
+.icon-bar { width: 100%; 
+background-color: #555; 
+overflow: auto; } 
+
+.icon-bar a { float: left; width: 20%; 
+text-align: center; 
+padding: 12px 0; 
+transition: all 0.3s ease; 
+color: white; font-size: 36px; }
+
+.icon-bar a:hover { 
+  background-color: #000; } 
+  
+.active { background-color: #0caade; }
+
+/* ---------- Flex-container ---------- */
+.flex-container {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
   background-color: DodgerBlue;
+  gap: 20px;
+  padding: 20px;
 }
 
 .flex-container > div {
   background-color: #f1f1f1;
-  width: 500px;
-  margin: 25px;
+  flex: 1 1 300px;
+  max-width: 500px;
   text-align: center;
   line-height: 300px;
   font-size: 30px;
 }
- 
- /* ---------- Grid ---------- */
- .grid-container {
+
+/* ---------- Grid ---------- */
+.grid-container {
   display: grid;
   grid-template-areas:
-    'main main main left left left'
-    'main main main left left left'
-    'main main main left left left';
+      "main main main left left left"
+      "main main main left left left"
+      "main main main left left left";
   gap: 10px;
   padding: 50px;
-  height: 200px;
   margin-bottom: 50px;
 }
-
 
 .item1, .item2 {
   padding: 20px;
   border-radius: 8px;
-  object-fit: cover;
   background-color: #bde7e1;
   color: #333;
   font-size: 1.1em;
   text-align: center;
 }
 
-
-.item1 img {
+.item1 img, .item2 img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Fyller boksen uten å forvrenge bildet */
-  display: block; /* Fjerner ekstra mellomrom under bildet */
-}
-
-
-.item2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Fyller boksen uten å forvrenge bildet */
-  display: block; /* Fjerner ekstra mellomrom under bildet */
+  object-fit: cover;
+  display: block;
 }
 
 .item1 { grid-area: main; }
 .item2 { grid-area: left; }
 
- /* Grid over*/
- 
-  
- .centered {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* ---------- Footer ---------- */
+.underside {
+  background-color: #bde7e1;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.underside p {
+  margin: 0;
   font-size: 20px;
 }
- 
- .underside{
-  background-color: #bde7e1;
-  height: 300px;
-  padding: 20px;
-  margin-top: 100px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  } 
- 
- 
- /* ---------- Mobiltilpasning ---------- */
- @media (max-width: 768px) {
- 
- 
+
+/* ---------- Mobiltilpasning ---------- */
+@media (max-width: 768px) {
+
+  h1 {
+      font-size: 28px;
+  }
+
   .grid-container {
       grid-template-areas:
-          'main'
-          'left';
+          "main"
+          "left";
       grid-template-columns: 1fr;
-      height: 400px;
+      padding: 20px;
+      gap: 20px;
   }
- 
- 
+
   .item1, .item2 {
       font-size: 1em;
       padding: 15px;
   }
- 
- 
-  h1 {
-      font-size: 30px;
+
+  .flex-container {
+      flex-direction: column;
+      margin: 10px;
+      gap: 10px;
   }
- }
- /* ---------- Mobiltilpasning over ---------- */
- 
- 
- 
- 
+
+  .flex-container > div {
+      flex: 1 1 100%;
+      line-height: 200px;
+      max-width: 100%;
+  }
+
+  .underside {
+      padding: 60px 20px;
+  }
+}
  
