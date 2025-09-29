@@ -29,7 +29,7 @@
     text-align: center;
     padding: 50px 20px;
   }
-
+  
   a:hover {
     background-color: rgba(219,205,186,0.9);
   }
@@ -44,6 +44,7 @@
   box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
 }
 .highlighted-text-foto {
+  font-size: 15px;
   padding: 3px 5px;
   border-radius: 12px;
   background-color: rgba(219,205,186,0.9);
