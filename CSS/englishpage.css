@@ -30,6 +30,10 @@
     padding: 50px 20px;
   }
 
+  a:hover {
+    background-color: rgba(219,205,186,0.9);
+  }
+
 .centered { font-size: 2.5rem; }
 .centered-lower { font-size: 1.2rem; margin-top: 10px; }
 .low { font-size: 0.95rem; margin-top: 12px; }
