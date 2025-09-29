@@ -82,7 +82,7 @@ h3 { color: #000; text-shadow: 2px 2px 4px rgba(54,52,52,0.5); }
   grid-template-columns: 1fr; /* mobil: én kolonne */
   gap: 20px;
   padding: 16px;
-  align-items: start;
+  align-items: stretch; /* alle items strekker seg like høye */
 }
 
 .item1, .item2 {
@@ -92,10 +92,11 @@ h3 { color: #000; text-shadow: 2px 2px 4px rgba(54,52,52,0.5); }
   color: #333;
   font-size: 1.05rem;
   text-align: center;
-  display: flex;             /* gjør innholdet fleksibelt */
-  flex-direction: column;    /* tekst/bilde under hverandre */
-  justify-content: space-between; /* sprer innholdet pent */
-  min-height: 350px; /* juster høyden her */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px; /* minimumshøyde på mobil */
+  aspect-ratio: 1/1; /* gjør rutene kvadratiske */
 }
 
 .item1 img, .item2 img {
@@ -109,9 +110,10 @@ h3 { color: #000; text-shadow: 2px 2px 4px rgba(54,52,52,0.5); }
 /* ---------- Større skjermer: to kolonner ---------- */
 @media (min-width: 768px) {
   .grid-container {
-    grid-template-columns: 1fr 1fr; /* to kolonner på PC */
+    grid-template-columns: repeat(2, 1fr); /* to kolonner på PC */
     padding: 30px;
     gap: 24px;
+    align-items: stretch; /* viktig: like høye ruter */
   }
 
   .tab button { font-size: 20px; padding: 14px 16px; }
