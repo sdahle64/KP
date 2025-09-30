@@ -164,7 +164,7 @@ body {font-family: Arial;}
   /* Grid: gå over til enkel kolonne */
   .grid-container {
     display: block;
-    padding: 15px;
+    padding: 10px;
   }
 
   .item1, .item2 {
