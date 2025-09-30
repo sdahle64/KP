@@ -96,7 +96,7 @@ body {font-family: Arial;}
       "main main main left left left"
       "main main main left left left";
   gap: 10px;
-  padding: 50px;
+  padding: 30px;
   margin-bottom: 50px;
 }
 
@@ -119,10 +119,69 @@ body {font-family: Arial;}
 .item1 { grid-area: main; }
 .item2 { grid-area: left; }
 
-
 .underside {
   background-color: #dbcdba;
   padding: 20px;
   text-align: center;
   margin-top: 20px;
+}
+
+/* ---------- RESPONSIVE STYLING ---------- */
+@media (max-width: 768px) {
+
+  /* Header-tekst tilpasset */
+  .overskrift {
+    min-height: 300px;
+    padding: 30px 10px;
+    background-attachment: scroll; /* fixed bakgrunn kan være buggy på mobil */
+  }
+
+  .centered {
+    font-size: 1.8rem;
+  }
+
+  .centered-lower {
+    font-size: 1rem;
+  }
+
+  .low {
+    font-size: 0.85rem;
+  }
+
+  /* Tabs: stablet i kolonne */
+  .tab {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab button {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  /* Grid: gå over til enkel kolonne */
+  .grid-container {
+    display: block;
+    padding: 15px;
+  }
+
+  .item1, .item2 {
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+
+  /* Bilder justeres */
+  .item1 img, .item2 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Footer: mindre padding */
+  .underside {
+    padding: 10px;
+    font-size: 0.9em;
+  }
 }
