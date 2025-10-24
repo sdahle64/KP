@@ -1,6 +1,10 @@
 console.log("Hei, verden!");
 
-var myName='Sunniva';
+const myName='Sunniva';
 console.log(myName);
-//Kommentar 
+//Kommentar
 
+let myAge='17';
+console.log(myAge);
+
+console.log(`Hei jeg heter ${myName} og jeg er ${myAge} år gammel`);
