@@ -8,3 +8,6 @@ let myAge='17';
 console.log(myAge);
 
 console.log(`Hei jeg heter ${myName} og jeg er ${myAge} år gammel`);
+
+
+
