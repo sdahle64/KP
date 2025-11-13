@@ -40,3 +40,19 @@ let fruits = ["apple", "orange","banana", "coconut"];
 for(let i = 1; i < fruits.length; i+= 2){
     console.log(fruits[i]);
 }
+
+// LOOPS
+
+/*for(let i = 0; i <= 10; i++){
+    console.log("i");
+} */
+
+// LOOPS WHILE
+
+let username = "";
+
+while(username === ""){
+    username = window.prompt("Enter your name");
+}
+console.log("Hello ${username}");
+
