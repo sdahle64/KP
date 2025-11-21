@@ -7,6 +7,7 @@ const game = () => {
     const playerOptions = document.querySelectorAll('.choice');
     const computerOptions = ['rock', 'paper', 'scissor'];
 
+    
     const movesLeft = document.querySelector('.movesleft');
     const resultText = document.querySelector('.result');
     const movePrompt = document.querySelector('.move');
