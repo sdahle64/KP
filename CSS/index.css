@@ -27,7 +27,7 @@ table {
   padding: 8px 12px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #333;
+  border: 2px solid #333;
 }
 
 .center-form button {
@@ -108,8 +108,9 @@ p {
   display: grid;
   grid-template-columns: 2fr 1fr; /* Venstre større */
   gap: 20px;
-  padding: 50px;
-  margin-bottom: 50px;
+  padding: 40px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .item1, .item2 {
