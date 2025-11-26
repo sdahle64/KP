@@ -13,6 +13,36 @@ table {
   margin: 10px auto;
 }
 
+.center-form {
+  display: flex;
+  flex-direction: column; /* Stabler elementene vertikalt */
+  align-items: center;    /* Sentrerer horisontalt */
+  justify-content: center; /* Sentrerer vertikalt */
+  margin: 30px 0;         /* Litt luft over og under */
+  gap: 10px;              /* Mellomrom mellom label, input og knapp */
+}
+
+.center-form input,
+.center-form button {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.center-form button {
+  background-color: #7d5ba6;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.center-form button:hover {
+  background-color: #5a3d85;
+}
+
+
 td, th {
   border: 1px solid black;
   padding: 10px;

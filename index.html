@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-  
+
 <head>
 <title>Min nettside</title>
 <link rel="stylesheet" href="CSS/index.css">
-<link rel="icon" type="image/x-icon" href="../Bilder/sol logo.png">
+<link rel="icon" type="image/x-icon" href="Bilder/sol logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -19,6 +19,14 @@
  <!-- Icon bar over-->
 
 <h1>Hovedside</h1>
+
+<div class="center-form">
+  <label for="username">Navnet ditt:</label>
+  <input id="username" type="text">
+  <button id="submitName">Submit</button>
+  <p id="greeting"></p> <!-- Her viser vi navnet -->
+</div>
+
 
 <!-- Grid under her -->
 <section class="grid-container">
@@ -76,6 +84,7 @@
    <p class="centered">©2025</p>
 </section>
 
+<script src="JavaScript/index.js"></script>
 
 </body>
 </html>
