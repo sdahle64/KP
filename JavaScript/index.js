@@ -16,3 +16,10 @@ button.addEventListener("click", function() {
     greeting.style.color = "red";
   }
 });
+
+const toggle = document.getElementById('toggleButton');
+const table = document.getElementById('logTable');
+
+button.addEventListener('click', () => {
+  table.classList.toggle('shrink');
+});

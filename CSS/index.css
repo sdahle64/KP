@@ -6,6 +6,7 @@ body {
   color: #000;
 }
 
+/*Tabell for hva jeg har gjort*/
 table {
   background-color: white;
   border-collapse: collapse;
@@ -13,15 +14,28 @@ table {
   margin: 10px auto;
 }
 
-.center-form {
-  display: flex;
-  flex-direction: column; /* Stabler elementene vertikalt */
-  align-items: center;    /* Sentrerer horisontalt */
-  justify-content: center; /* Sentrerer vertikalt */
-  margin: 30px 0;         /* Litt luft over og under */
-  gap: 10px;              /* Mellomrom mellom label, input og knapp */
+td, th, tr{
+  border: 1px solid black;
+  padding: 2px;
 }
 
+#logTable.shrink {
+  max-height: 150px; /* høyden når den er krympet */
+  overflow-y: scroll; /* rullbar hvis innholdet er for stort */
+  display: block;
+}
+
+/* Få tekst i midten*/
+.center-form {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center; 
+  margin: 10px 0;       
+  gap: 5px;              
+}
+
+/* Få tekst i midten med JS funsjon*/
 .center-form input,
 .center-form button {
   padding: 8px 12px;
@@ -42,13 +56,7 @@ table {
   background-color: #5a3d85;
 }
 
-
-td, th {
-  border: 1px solid black;
-  padding: 10px;
-}
-
-/* ---------- Overskrifter ---------- */
+/* ---------- Tekster ---------- */
 h1 {
   color: #000;
   text-align: center;
@@ -70,7 +78,11 @@ h3 {
 
 p {
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1px;
+}
+
+li, ul{
+  text-decoration: none;
 }
 
 /* ---------- Icon bar ---------- */
@@ -107,8 +119,8 @@ p {
 .grid-container {
   display: grid;
   grid-template-columns: 2fr 1fr; /* Venstre større */
-  gap: 20px;
-  padding: 40px;
+  gap: 10px;
+  padding: 10px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
