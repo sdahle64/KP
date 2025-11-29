@@ -1,6 +1,6 @@
 /* ---------- Generelle stiler ---------- */
 body {
-    background-color: rgb(250, 234, 215);
+    background-color: #FFF5E6;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
 
 h1 {
     font-size: 50px;
-    color: rgb(227, 74, 74);
+    color: #D94F4F;
     text-align: center;
     margin-top: 40px;
 }
@@ -35,7 +35,7 @@ h2 {
 .item1, .item2 {
     padding: 20px;
     border-radius: 8px;
-    background-color: rgb(247, 223, 193);
+    background-color: #FFE9C9;
     text-align: center;
     font-size: 1.1em;
 }
@@ -62,7 +62,7 @@ h2 {
 
 /* ---------- Footer / underside ---------- */
 footer, .underside {
-    background-color: rgb(247, 223, 193);
+    background-color: #FFE9C9;
     padding: 100px 20px;
     text-align: center;
     margin-top: 80px;
@@ -76,7 +76,7 @@ footer, .underside {
 /* ---------- Mobiltilpasning ---------- */
 @media (max-width: 768px) {
     h1 {
-        font-size: 28px;
+        font-size: 38px;
     }
 
     h2 {
