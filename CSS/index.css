@@ -8,21 +8,24 @@ body {
 
 /*Tabell for hva jeg har gjort*/
 table {
-  background-color: white;
   border-collapse: collapse;
-  text-align: center;
-  margin: 10px auto;
+  width: 60%;
+  margin: 20px auto;
+  font-size: 16px;
 }
 
-td, th, tr{
-  border: 1px solid black;
-  padding: 2px;
+th, td {
+  border: 1px solid #333;
+  padding: 10px 15px;
+  text-align: left;
 }
 
-#logTable.shrink {
-  max-height: 150px; /* høyden når den er krympet */
-  overflow-y: scroll; /* rullbar hvis innholdet er for stort */
+button {
   display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* Få tekst i midten*/
@@ -119,10 +122,11 @@ li, ul{
 .grid-container {
   display: grid;
   grid-template-columns: 2fr 1fr; /* Venstre større */
-  gap: 10px;
+  gap: 20px;
   padding: 10px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .item1, .item2 {

@@ -32,42 +32,35 @@
 <section class="grid-container">
    <div class="item1">
     <h2>Logg</h2>
-
-    <table>
+    <table id="minTabell">
       <tr>
-        <td> <h3>Dato</h3></td>
-        <td><h3>Hva jeg gjorde:</h3></td>
+        <th>Dato</th>
+        <th>Hva jeg gjorde</th>
       </tr>
-      <!-- Legg ny rad under her-->
-
+      <tr>
+        <td>Ola</td>
+        <td>25</td>
+      </tr>
       <tr>
         <td>26.11.25</td>
-        <td>Planlegge nettside del 2</td>
+        <td>Planlegge nettside V2</td>
       </tr>
-
       <tr>
-            <td>21.11.25</td>
-            <td>
-            <p><a href="HTML/finnfeil.html">Finn feil nettside</a></p>
-            </td>
-          </tr>
-        </td>
+        <td>21.11.25</td>
+        <td><a href="/HTML/finnfeil.html">Finn Feil</a></td>
       </tr>
-
-        <tr>
-          <td>20.11.25</td>
-          <td>
-          Laget stein, saks, papir side og begynte på planleggning av Nettside v2
-          </td>
-        </tr>
-
-        <!-- Tabell deler du butter øverst for hver gang du skal skrive her-->
+      <tr>
+        <td>20.11.25</td>
+        <td>Lagde Stein, saks, papir spill med JavaScript</td>
+      </tr>
+      <tr>
         <td>12.11.25</td>
-      <td>
-          <p>Fikset hovedsiden, Øvde på videoene i JavaScript, a inn JavaScript side på skolesiden</p>
-        </td></tr>
-
+        <td>Fikse hovedside, øve på videoer om JavaScript, lagt inn JS øveside på skolesiden.</td>
+      </tr>
     </table>
+    
+    <button onclick="visKunEnRad()">Vis en rad</button>
+    <button onclick="visHeleTabellen()">Vis hele tabellen</button>
    </div>
 
    <div class="item2">
