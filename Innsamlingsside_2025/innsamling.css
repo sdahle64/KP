@@ -1,6 +1,6 @@
 /* ---------- Generelle stiler ---------- */
 body {
-    background-color: #FFF5E6;
+    background-color: #f8e1a7;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
@@ -21,21 +21,22 @@ h2 {
     margin-bottom: 20px;
 }
 
+
 /* ---------- Grid-oppsett ---------- */
 .grid-container {
     display: grid;
     grid-template-areas:
         "main main main left left left";
-    gap: 20px;
-    padding: 50px;
+    gap: 10px;
+    padding: 10px;
     min-height: 300px; /* erstatter fixed height */
 }
 
 /* ---------- Grid-items ---------- */
 .item1, .item2 {
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
-    background-color: #FFE9C9;
+    background-color: #FFE08F;
     text-align: center;
     font-size: 1.1em;
 }
@@ -46,23 +47,18 @@ h2 {
 
 /* Bilder */
 .item1 img, .item2 img {
-    width: 100%;
+    width: 500px;
     height: auto;
-    max-height: 400px;
+    max-height: 600px;
     object-fit: cover;
     display: block;
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
-/* Hover-effekt på bilder */
-.item1 img:hover, .item2 img:hover {
-    transform: scale(1.05);
-}
-
 /* ---------- Footer / underside ---------- */
 footer, .underside {
-    background-color: #FFE9C9;
+    background-color: #FFE08F;
     padding: 100px 20px;
     text-align: center;
     margin-top: 80px;
