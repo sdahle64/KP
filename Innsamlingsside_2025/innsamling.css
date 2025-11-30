@@ -21,6 +21,24 @@ h2 {
     margin-bottom: 20px;
 }
 
+.centered { font-size: 2.5rem; }
+.centered-lower { font-size: 1.2rem; margin-top: 10px; }
+.low { font-size: 0.95rem; margin-top: 12px; }
+.highlighted-text {
+  padding: 5px 15px;
+  border-radius: 22px;
+  background-color: #fff;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+}
+.highlighted-text-foto {
+  font-size: 15px;
+  padding: 3px 5px;
+  border-radius: 12px;
+  background-color: rgba(219,205,186,0.9);
+  display: inline-block;
+  margin-top: 5px;
+}
+
 
 /* ---------- Grid-oppsett ---------- */
 .grid-container {
