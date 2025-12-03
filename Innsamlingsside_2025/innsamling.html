@@ -1,51 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
-    <link rel="stylesheet" href="innsamling.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innsamling for Uganda</title>
+    <link rel="stylesheet" href="innsamling.css">
 </head>
 <body>
-    
-<h1>Bring Children from Streets</h1>
-<h2>Innsamlingsakksjon for trygg utdanning i Uganda</h2>
+    <div class="container">
 
-<section>
-    <div class="item1">
-        <p>Denne nettsiden har et spill og en QR kode til å samle inn penger</p>
+        <!-- Tittel og tekst -->
+        <header class="header">
+            <h1>Bring Children from Street</h1>
+            <p>En innsamlingsakksjon for trygg utdanningi Uganda.</p>
+        </header>
+
+        <!-- Bilde-seksjon -->
+        <section class="image-section">
+            <img src="../Bilder/Uganda/UgandaFlagg.jpg" alt="Beskriv bildet" class="responsive-img">
+        </section>
+
+        <!-- Quiz -->
+        <section class="quiz-section">
+            <h2>Test kunnskapen din!</h2>
+            <p>Hva heter hovedstaden i Uganda?</p>
+            <button class="quiz-btn" onclick="checkAnswer('A')">Kampala</button>
+            <button class="quiz-btn" onclick="checkAnswer('B')">Nairobi</button>
+            <button class="quiz-btn" onclick="checkAnswer('C')">Lagos</button>
+            <p id="quiz-result"></p>
+        </section>
+
+        <!-- QR-kode -->
+        <section class="qr-section">
+            <h2>Skann QR-koden for å gi</h2>
+            <img src="qr-kode.png" alt="QR-kode for donasjon" class="qr-img">
+        </section>
+
+        <section class="info-boxes">
+            <div class="info-box animated"><h1>Hva gjør prosjektet?</h1>
+                <p>hhhhh</p>
+            </div>
+
+            <div class="info-box animated"><h1>Hvem kan bidra?</h1>
+                <p>hhhhh</p>
+            </div>
+
+            <div class="info-box animated"><h1>Hvordan brukes pengene?</h1>
+                <p>hhhhh</p>
+            </div>
+
+            <div class="info-box animated"><h1>Kontakt oss</h1>
+                <p>hhhhh</p>
+            </div>
+        </section>
+
+
+    <section class="underside"> <p class="centered">©2025</p> <p class="centered">Av Sunniva Dahle</p> </section>
     </div>
-</section>
 
-<section class="grid-container">
-    <div class="item1">
-        <h2>Hva går pengene til?</h2>
-        <p>På Amalie Skram Videregående skole arrangerer vi en innsamlingsaksjon til inntekt for “Bring Children from Streets”, en organisasjon som jobber for å gi barn i Uganda trygg utdanning, et sikkert sted å bo og bedre framtidsmuligheter. Til <strong>16 desember</strong> skal vi ha ulike aktiviteter som kakesalg, sponsorløp og flere andre arrangementer der elever og lærere kan bidra. Sammen håper vi å samle inn mest mulig og gjøre en positiv forskjell for barn som trenger det.</p>
-    </div>
 
-    <div class="item2">
-        <img src="../Bilder/Uganda/UgandaFlagg.jpg">
-        <h2 class="highlighted-text-foto"><a href="https://no.wikipedia.org/wiki/Uganda" target="_blank">Bilde tatt fra Wikipedia</a></h2>
-    </div>
-</section>
-
-<section class="grid-container">
-    <div class="item1">
-        <img src="../Bilder/Uganda/UtdanningUganda.jpg">
-        <h2 class="highlighted-text-foto"><a href="https://www.bdo.no/nb-no/om-bdo/samarbeid/redd-barna/uganda" target="_blank">Bilde tatt fra BDO Norge</a></h2>
-    </div>
-    
-    <div class="item2">
-        <h2>Uganda</h2>
-       <p>Uganda er et land i Øst-Afrika, med hovedstaden Kampala. Landet har rundt 45 millioner innbyggere og er kjent for vakker natur, som innsjøer, fjell og savanner. Over halvparten av befolkningen er barn og ungdom, og mange barn har ikke tilgang til trygg skolegang eller et stabilt hjem. Derfor er organisasjoner som Bring Children from Streets viktige for å gi barna bedre muligheter og en tryggere framtid.</p>
-    </div>
-</section>
-
-<section class="underside">
-    <p class="centered">©2025</p>
-    <p class="centered">Av Sunniva Dahle</p>
- </section>
-
-<script src="innsamling.js"></script>
+    <script src="innsamling.js"></script>
 </body>
 </html>
