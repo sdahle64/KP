@@ -1,7 +1,16 @@
 body {
     font-family: sans-serif;
     text-align: center;
-    background: #f8f8f8;
+    background: hsl(267, 77%, 88%);
+  }
+
+  h1{
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-bottom: 70px;
   }
   
   .game {
@@ -22,7 +31,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.2s;
   }
   
   .cell:hover {
