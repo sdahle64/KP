@@ -121,10 +121,9 @@ li, ul{
 /* PC: to kolonner ved siden av hverandre */
 .grid-container {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Venstre større */
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   padding: 10px;
-  margin-bottom: 30px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -141,7 +140,8 @@ li, ul{
 /* ---------- Footer ---------- */
 .underside {
   background-color: #bca2c8;
-  padding: 100px 20px;
+  padding: 100px 10px;
+  margin-top: 40px;
   text-align: center;
 }
 
