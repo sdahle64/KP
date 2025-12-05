@@ -1,70 +1,40 @@
-const EMOJIS = ["🐶","🐱","🦊","🐼","🦁","🐸","🐵","🐙","🦄","🐯","🐷","🐝"];
+const EMOJIS = ["🐶","🐱","🦊","🐼","🦁","🐸"]; // 6 par = 12 kort
 
 const board = document.getElementById('board');
-const pairsSelect = document.getElementById('pairs');
 const restartBtn = document.getElementById('restart');
-const movesEl = document.getElementById('moves');
-const timerEl = document.getElementById('timer');
-const matchesEl = document.getElementById('matches');
+const message = document.getElementById('message');
 
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
-let moves = 0;
 let matches = 0;
-let totalPairs = parseInt(pairsSelect.value,10);
-let timer = null;
-let seconds = 0;
 
 function shuffle(array){
   for(let i=array.length-1;i>0;i--){
     const j = Math.floor(Math.random()*(i+1));
-    [array[i],array[j]] = [array[j],array[i]];
+    [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 }
 
-function startTimer(){
-  clearInterval(timer);
-  seconds = 0;
-  timerEl.textContent = seconds + 's';
-  timer = setInterval(()=>{
-    seconds++;
-    timerEl.textContent = seconds + 's';
-  },1000);
-}
-
-function stopTimer(){
-  clearInterval(timer);
-}
-
-function createDeck(pairsCount){
-  totalPairs = pairsCount;
-  const chosen = EMOJIS.slice(0,pairsCount);
-  return shuffle([...chosen, ...chosen]);
-}
-
 function buildBoard(){
-  board.innerHTML='';
-  firstCard = null; secondCard = null; lockBoard=false;
-  moves = 0; matches = 0;
-  movesEl.textContent = moves;
-  matchesEl.textContent = matches + '/' + totalPairs;
-  startTimer();
+  board.innerHTML = '';
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
+  matches = 0;
+  message.textContent = '';
 
-  const deck = createDeck(totalPairs);
-  board.className = deck.length <= 8 ? 'grid cols-4' : 'grid cols-4';
+  const deck = shuffle([...EMOJIS, ...EMOJIS]); // par
 
-  deck.forEach((icon, idx) =>{
-    const card = document.createElement('button');
+  deck.forEach((icon)=>{
+    const card = document.createElement('div');
     card.className = 'card';
-    card.type = 'button';
     card.dataset.icon = icon;
-    card.dataset.index = idx;
     card.innerHTML = `
       <div class="inner">
         <div class="face front">${icon}</div>
-        <div class="face back">?</div>
+        <div class="face back"></div>
       </div>`;
     card.addEventListener('click', onCardClick);
     board.appendChild(card);
@@ -73,7 +43,8 @@ function buildBoard(){
 
 function onCardClick(e){
   const clicked = e.currentTarget;
-  if(lockBoard || clicked === firstCard) return;
+  if(lockBoard || clicked.classList.contains('flipped')) return;
+
   clicked.classList.add('flipped');
 
   if(!firstCard){
@@ -83,27 +54,19 @@ function onCardClick(e){
 
   secondCard = clicked;
   lockBoard = true;
-  moves++;
-  movesEl.textContent = moves;
 
   if(firstCard.dataset.icon === secondCard.dataset.icon){
-    firstCard.removeEventListener('click', onCardClick);
-    secondCard.removeEventListener('click', onCardClick);
     matches++;
-    matchesEl.textContent = matches + '/' + totalPairs;
     resetTurn();
-    if(matches === totalPairs){
-      setTimeout(()=>{
-        stopTimer();
-        alert(`Gratulerer — du fant alle parene på ${moves} trykk og ${seconds} sekunder!`);
-      },300);
+    if(matches === EMOJIS.length){
+      message.textContent = 'Gratulerer! Du fant alle parene!';
     }
   } else {
     setTimeout(()=>{
       firstCard.classList.remove('flipped');
       secondCard.classList.remove('flipped');
       resetTurn();
-    }, 700);
+    }, 800);
   }
 }
 
@@ -112,14 +75,6 @@ function resetTurn(){
   lockBoard = false;
 }
 
-restartBtn.addEventListener('click', ()=>{
-  totalPairs = parseInt(pairsSelect.value,10);
-  buildBoard();
-});
-
-pairsSelect.addEventListener('change', ()=>{
-  totalPairs = parseInt(pairsSelect.value,10);
-  buildBoard();
-});
+restartBtn.addEventListener('click', buildBoard);
 
 buildBoard();
