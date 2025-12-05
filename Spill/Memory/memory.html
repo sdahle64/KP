@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Spill</title>
+  <link rel="stylesheet" href="memory.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Enkelt Memory-spill</h1>
+      <div class="controls">
+        <label for="pairs">Antall forskjellige kort:</label>
+        <select id="pairs">
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6" selected>6</option>
+        </select>
+        <button id="restart">Start på nytt</button>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div>Treff: <strong id="moves">0</strong></div>
+      <div>Tid: <strong id="timer">0s</strong></div>
+      <div>Par funnet: <strong id="matches">0</strong></div>
+    </section>
+
+    <section id="board" class="grid cols-4" aria-live="polite"></section>
+
+    <footer>
+      Klikk på et kort for å snu det. Finn alle parene for å vinne!
+    </footer>
+  </main>
+
+  <script src="memory.js"></script>
+</body>
+</html>

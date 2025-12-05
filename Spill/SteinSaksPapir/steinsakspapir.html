@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stein Saks Papir</title>
+<link rel="stylesheet" href="steinsakspapir.css" />
+</head>
+<body>
+      
+<div class="container">
+<h1>Stein · Saks · Papir</h1>
+
+
+<div class="scoreboard">
+<div>Du: <span id="playerScore">0</span></div>
+<div>PC: <span id="computerScore">0</span></div>
+</div>
+
+
+<div class="choices">
+<button data-choice="rock">🪨 Stein</button>
+<button data-choice="scissors">✂️ Saks</button>
+<button data-choice="paper">📄 Papir</button>
+</div>
+
+
+<div class="result">
+<p>Du valgte: <span id="playerChoice">–</span></p>
+<p>PC valgte: <span id="computerChoice">–</span></p>
+<h2 id="roundResult">Klar</h2>
+</div>
+
+
+<button id="reset">Tilbakestill</button>
+<br>
+<button class="button1" onclick="window.location.href='../../HTML/spill.html'">
+    Tilbake til spillside
+</button>
+
+</div>
+
+
+
+<script src="steinsakspapir.js"></script>
+</body>
+</html>

@@ -42,3 +42,10 @@ body {
     font-weight: bold;
     margin-top: 10px;
   }
+
+  .button1 {
+    background-color: #d293f9;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 20px;
+    }
