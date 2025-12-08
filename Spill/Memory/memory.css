@@ -67,3 +67,34 @@ body{
     background:#b09fe6;
   }
   
+  /* --- RESPONSIV FOR MOBIL --- */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonner på små skjermer */
+    gap: 6px;
+    width: 90vw; /* fyller nesten hele bredden */
+  }
+
+  .card {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* kortene holder kvadratisk form */
+  }
+
+  .face {
+    font-size: clamp(20px, 8vw, 32px); /* skalerer emoji/tekst */
+  }
+
+  body {
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .app {
+    max-width: 100%;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
