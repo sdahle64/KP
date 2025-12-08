@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Running Dino</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      margin: 0;
+    }
+
+    #game {
+      width: 90vw;      /* responsiv bredde */
+      max-width: 600px; /* maks størrelse for desktop */
+      height: 200px;
+      background-color: hsl(267, 65%, 87%);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid #333;
+    }
+
+    #dino {
+      width: 10%;       /* prosentbasert for responsivitet */
+      max-width: 50px;
+      height: 50px;
+      background-color: rgb(141, 75, 227);
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+    }
+
+    #obstacle {
+      width: 5%;
+      max-width: 20px;
+      height: 50px;
+      background-color: red;
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <div id="game">
+      <div id="dino"></div>
+      <div id="obstacle"></div>
+    </div>
+    <div id="score">Poeng: 0</div>
+  </div>
+
+  <script>
+    const dino = document.getElementById("dino");
+    const obstacle = document.getElementById("obstacle");
+    const scoreEl = document.getElementById("score");
+    const gameWidth = document.getElementById("game").offsetWidth;
+
+    let score = 0;
+    let gameOver = false;
+    let obstaclePos = gameWidth;
+    let dinoBottom = 0;
+    let isJumping = false;
+    let jumpSpeed = 0;
+    const gravity = 0.5;
+
+    function jump() {
+      if (!isJumping) {
+        isJumping = true;
+        jumpSpeed = 10; // starthastighet
+      }
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.code === "Space") jump();
+    });
+
+    function updateDino() {
+      if (isJumping) {
+        dinoBottom += jumpSpeed;
+        jumpSpeed -= gravity;
+
+        if (dinoBottom <= 0) {
+          dinoBottom = 0;
+          isJumping = false;
+        }
+
+        dino.style.bottom = dinoBottom + "px";
+      }
+      requestAnimationFrame(updateDino);
+    }
+
+    function moveObstacle() {
+      if (gameOver) return;
+
+      obstaclePos -= 5; // fart
+      if (obstaclePos < -obstacle.offsetWidth) {
+        obstaclePos = gameWidth;
+        score++;
+        scoreEl.textContent = "Poeng: " + score;
+      }
+      obstacle.style.left = obstaclePos + "px";
+
+      // Kollisjon
+      const dinoLeft = dino.offsetLeft;
+      const dinoWidth = dino.offsetWidth;
+      const obstacleWidth = obstacle.offsetWidth;
+
+      if (
+        obstaclePos < dinoLeft + dinoWidth &&
+        obstaclePos + obstacleWidth > dinoLeft &&
+        dinoBottom < 50
+      ) {
+        alert("Game Over! Poeng: " + score);
+        gameOver = true;
+      }
+
+      requestAnimationFrame(moveObstacle);
+    }
+
+    updateDino();
+    moveObstacle();
+  </script>
+
+</body>
+</html>  
