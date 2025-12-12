@@ -7,54 +7,49 @@
     <link rel="stylesheet" href="innsamling.css">
 </head>
 <body>
-
-    <div id="boks"></div> 
-
+  <div id="boks"></div> 
+  
     <div class="container">
-
-        <!-- Tittel og tekst -->
+        <!-- Header -->
         <header class="header">
             <h1>Bring Children from Street</h1>
-            <p class="sentence">En innsamlingsakksjon for trygg utdanning for barn i Uganda som akuratt <span class="du-anim">DU</span> kan bidra med!</p>
+            <p class="sentence">En innsamlingsaksjon for trygg utdanning for barn i Uganda som akkurat <span class="du-anim">DU</span> kan bidra med!</p>
         </header>
 
-        <!-- Bilde-seksjon -->
-        <section class="image-section">
-            <img src="../Bilder/Uganda/UgandaFlagg.jpg" alt="Beskriv bildet" class="responsive-img">
+        <!-- Bilde -->
+        <div class="image-section">
+            <img src="../Bilder/Uganda/UgandaFlagg.jpg" alt="Flagget til Uganda" class="responsive-img">
+        </div>
+
+        <!-- Memory-spill (kompakt og over teksten) -->
+        <section class="memory-section">
+            <h2>Uganda Memory 🧩</h2>
+            <button id="start-memory">Start Memory</button>
+            <div id="memory-board" class="memory-board"></div>
+            <p id="memory-result"></p>
         </section>
 
-        <!-- Quiz -->
-        <section class="quiz-section">
-            <h2>Test kunnskapen din!</h2>
-            <p>Hva heter hovedstaden i Uganda?</p>
-            <button class="quiz-btn" onclick="checkAnswer('A')">Kampala</button>
-            <button class="quiz-btn" onclick="checkAnswer('B')">Nairobi</button>
-            <button class="quiz-btn" onclick="checkAnswer('C')">Lagos</button>
-            <p id="quiz-result"></p>
-        </section>
-
-    
-<div class="grid">
-    <div class="box">
-      <p>Vi arrangerer en innsamlingsaksjon til inntekt for “Bring Children from Streets”.</p>
-      <p>Til <strong>16. desember</strong> kan du delta på kakesalg og sponsorløp.</p>
-    </div>
-  
-    <div class="box">
-      <p>Uganda har mange barn som ikke har tilgang til trygg skolegang.</p>
-      <p>Din støtte hjelper dem til bedre fremtid og trygg utdanning.</p>
-    </div>
-  
-    <div class="box">
-      <p>Bli med og gjør en forskjell!</p>
-      <p>Alle bidrag teller, stort eller smått.</p>
+        <!-- Informasjon -->
+        <div class="grid">
+            <div class="box">
+                <p>Vi på Amalie Skram arrangerer en innsamlingsaksjon til inntekt for “Bring Children from Streets”.</p>
+                <p>Til <strong>16. desember</strong> prøver vi elever å samle inn mest mulig penger for en god sak.</p>
+            </div>
+            <div class="box">
+                <p>"Bring Children from Street" er en orginisasjon som jobber med trygg skoletilgang til barn i Uganda.</p>
+                <p>Din støtte hjelper dem til bedre fremtid og trygg utdanning.</p>
+            </div>
+            <div class="box">
+                <p>Bli med og gjør en forskjell!</p>
+                <p>Alle bidrag teller, stort eller smått.</p>
+            </div>
+        </div>
     </div>
 
-    </div>
-
+    <!-- Footer -->
     <footer class="underside">
         <p class="centered-lower">Av Sunniva<br>@2025</p>
-      </footer>
+    </footer>
 
     <script src="innsamling.js"></script>
 </body>

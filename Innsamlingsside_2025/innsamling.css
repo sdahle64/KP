@@ -1,197 +1,267 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
-    background-color: #FFE08F; /* varm gul farge */
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #FFE08F;
     color: #2e2e2e;
 }
 
-#boks { 
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
 
-    height: 50px; 
+/* ===== Øvre boks med farge-animasjon ===== */
+#boks {
+    height: 50px;
+    width: 100%;              /* Tar hele bredden */
+    background-color: rgb(255, 0, 0);
+    position: relative;
 
-    width: auto; 
+    /* Animasjon */
+    animation-name: frem-og-tilbake;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
-    background-color: rgb(255, 0, 0); 
-
-    position: relative; 
-
-    animation-name: frem-og-tilbake; 
-
-    animation-duration: 5s; 
-
-    animation-iteration-count: infinite; 
-
-    animation-direction: alternate; 
-
-} 
-
-@keyframes frem-og-tilbake { 
-
-    0% { 
-
-        left: 0px; 
-        right: 0px;
-
-    } 
-
-    50%{
-        left: 0px; 
-        right: 0px;
-        background-color: #D94F4F;
+@keyframes frem-og-tilbake {
+    0% {
+        background-color: rgb(255, 0, 0);
     }
-
-
-    100%{
-        left: 0px; 
-        right: 0px;
-        background-color: #FFD166;
+    50% { 
+        background-color: #D94F4F;    
     }
-} 
+    100% {
+        background-color: #FFD166;   
+    }
+}
+
 
 /* Header */
 .header {
     text-align: center;
-    padding: 40px 20px;
 }
 
 .header h1 {
     color: #D94F4F;
     font-size: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .header p {
-    font-size: 24px;
+    font-size: 22px;
 }
 
-.centered {
-    text-align: center;
-}
-
-/* Tekst Animasjon */
-.sentence {
-    font-size: 32px;
-    font-weight: 300px;
-  }
-
-  .du-anim {
+.du-anim {
     display: inline-block;
     animation: pop 3s infinite ease-in-out;
     font-weight: 900;
-  }
+}
 
-  @keyframes pop {
+@keyframes pop {
     0%   { transform: scale(1); }
     50%  { transform: scale(1.4); }
     100% { transform: scale(1); }
-  }
+}
 
-  .grid {
+/* QR-kode */
+.qr-section {
+    text-align: center;
+    margin: 50px 0;
+}
+.qr-img {
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Bilde */
+.image-section {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.responsive-img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Memory-seksjon */
+.memory-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    margin-bottom: 50px;
+    padding: 15px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 15px;
+}
+
+.memory-board {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.memory-card {
+    width: 70px;
+    height: 70px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.memory-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-front,
+.memory-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 28px;
+}
+
+.memory-card-front {
+    background-color: #FFD166;
+}
+
+.memory-card-back {
+    background-color: #D94F4F;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+#start-memory {
+    padding: 8px 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #D94F4F;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#start-memory:hover {
+    background-color: #b33a3a;
+}
+
+#memory-result {
+    margin-top: 8px;
+    font-weight: bold;
+    color: green;
+}
+
+/* Informasjon */
+.grid {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 20px;
     justify-items: center;
-  }
+}
 
-  .box {
-    width: 800px;
+.box {
+    width: 80%;
+    background-color: #FFD166;
+    border-radius: 36px;
+    padding: 20px;
+    margin-top: 10px;
+    color: black;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ===== Box-animasjon ===== */
+.box {
+    width: 90%;
+    max-width: 800px;
     background-color: #FFD166;
     border-radius: 36px;
     padding: 50px;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin: 40px 0;
     color: rgb(0, 0, 0);
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
     box-sizing: border-box;
-    animation: grow 2s infinite ease-in-out;
-  }
 
-  @keyframes grow {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    /* Puls/vekst animasjon */
+    animation: grow 4s infinite ease-in-out alternate;
+    transform: translateZ(0); /* For å sikre at animasjonen fungerer */
+}
+
+@keyframes grow {
+    0%   { transform: scale(1); }
+    25%  { transform: scale(1.03); }
+    50%  { transform: scale(1.05); }
+    75%  { transform: scale(1.03); }
     100% { transform: scale(1); }
-  }
-
-  p {
-    margin: 0 0 50px 0;
-  }
-
-  strong {
-    color: #000000;
-  }
-
-
-/* Bilde */
-.image-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 1px 0;
 }
 
-.responsive-img {
-    max-width: 50%;
-    height: 50%;
-    border-radius: 12px;
-}
 
-.underside{
+/* Footer */
+.underside {
     color: #000000;
     text-align: center;
     height: 300px;
+    margin-top: 50px;
     background-color: #FFD166;
+
+    display: flex;              /* Aktivér flexbox */
+    justify-content: center;    /* Midt horisontalt */
+    align-items: center;        /* Midt vertikalt */
 }
 
-/* Quiz */
-.quiz-section {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.quiz-btn {
-    background-color: #D94F4F;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    margin: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.quiz-btn:hover {
-    background-color: #b33a3a;
-}
 /* Mobiltilpasning */
-@media (max-width: 850px) {
-    .responsive-img {
-        max-width: 80%;
+@media (max-width: 600px) {
+    .header h1 { 
+        font-size: 36px; 
     }
 
-    .header h1 {
-        font-size: 36px;
+    .header p { 
+        font-size: 18px; 
     }
 
-    .header p {
-        font-size: 20px;
+    .responsive-img { 
+        max-width: 90%; 
     }
 
-    .quiz-btn {
-        font-size: 16px;
-        padding: 10px 20px;
+    .memory-card { 
+        width: 60px; 
+        height: 60px; 
     }
 
-    .qr-img {
-        width: 150px;
-        height: 150px;
+    .memory-card-front, .memory-card-back { 
+        font-size: 22px; 
     }
-    .box {
-        width: 250px;
-        height: 300px;
-      }
-    
+    .box { 
+        width: 95%; 
+        padding: 15px; 
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
