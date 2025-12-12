@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Running Dino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       height: 100vh;
-      background-color: #f0f0f0;
-      font-family: sans-serif;
       margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      touch-action: manipulation;
     }
 
     #game {
-      width: 90vw;      /* responsiv bredde */
-      max-width: 600px; /* maks størrelse for desktop */
-      height: 200px;
+      width: 95vw;
+      height: 50vh;
       background-color: hsl(267, 65%, 87%);
       position: relative;
       overflow: hidden;
@@ -26,23 +27,21 @@
     }
 
     #dino {
-      width: 10%;       /* prosentbasert for responsivitet */
-      max-width: 50px;
-      height: 50px;
-      background-color: rgb(141, 75, 227);
+      width: 10%;
+      height: 30%;
       position: absolute;
       bottom: 0;
       left: 10%;
+      background-color: rgb(141, 75, 227);
     }
 
     #obstacle {
       width: 5%;
-      max-width: 20px;
-      height: 50px;
-      background-color: red;
+      height: 30%;
       position: absolute;
       bottom: 0;
       left: 100%;
+      background-color: red;
     }
 
     #score {
@@ -51,98 +50,120 @@
       text-align: center;
     }
 
-    #pauseBtn {
+    #gameOver {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+
+    button {
       margin-top: 10px;
       padding: 8px 16px;
       font-size: 16px;
       cursor: pointer;
     }
-    .button1 {
-    background-color: #e0c1f4;
-    border-radius: 8px;
-    width: 200px;
-    margin-top: 30px;
-    }
-
   </style>
 </head>
 <body>
 
-  <h1>Running Dino</h1>
-  <p>Trykk på mellomrom for å hoppe</p>
-
   <div id="game">
-    <div id="dino"></div>
-    <div id="obstacle"></div>
+    <div id="gameOver">GAME OVER!</div>
   </div>
-
   <div id="score">Poeng: 0</div>
   <button id="pauseBtn">Pause</button>
-
-  <button class="button1" onclick="window.location.href='../../HTML/spill.html'">
-    Tilbake til spillside
-</button>
+  <button id="restartBtn">Start på nytt</button>
 
   <script>
-    const dino = document.getElementById("dino");
-    const obstacle = document.getElementById("obstacle");
+    const game = document.getElementById("game");
     const scoreEl = document.getElementById("score");
-    const gameWidth = document.getElementById("game").offsetWidth;
     const pauseBtn = document.getElementById("pauseBtn");
+    const restartBtn = document.getElementById("restartBtn");
+    const gameOverEl = document.getElementById("gameOver");
+
+    const dino = document.createElement("div");
+    dino.id = "dino";
+    game.appendChild(dino);
+
+    const obstacle = document.createElement("div");
+    obstacle.id = "obstacle";
+    game.appendChild(obstacle);
 
     let score = 0;
     let gameOver = false;
-    let obstaclePos = gameWidth;
-    let dinoBottom = 0;
-    let isJumping = false;
-    let jumpSpeed = 0;
-    const gravity = 0.5;
     let paused = false;
+    let dinoBottom = 0;
+    let jumpSpeed = 0;
+    const gravity = 0.7;
+    let isJumping = false;
+    let obstaclePos = game.offsetWidth;
+    let obstacleSpeed = 5; // starter hastighet
 
     function jump() {
-      if (!isJumping) {
+      if (!isJumping && !paused && !gameOver) {
         isJumping = true;
-        jumpSpeed = 10; // starthastighet
+        jumpSpeed = 15;
       }
     }
 
-    document.addEventListener("keydown", (event) => {
-      if (event.code === "Space") jump();
-    });
+    document.addEventListener("keydown", e => { if(e.code==="Space") jump(); });
+    game.addEventListener("touchstart", e => { e.preventDefault(); jump(); });
 
     pauseBtn.addEventListener("click", () => {
       paused = !paused;
       pauseBtn.textContent = paused ? "Fortsett" : "Pause";
     });
 
+    restartBtn.addEventListener("click", resetGame);
+
+    function resetGame() {
+      gameOver = false;
+      paused = false;
+      score = 0;
+      scoreEl.textContent = "Poeng: 0";
+      obstaclePos = game.offsetWidth;
+      dinoBottom = 0;
+      jumpSpeed = 0;
+      isJumping = false;
+      obstacleSpeed = 5;
+      dino.style.bottom = "0px";
+      obstacle.style.left = obstaclePos + "px";
+      gameOverEl.style.display = "none";
+      pauseBtn.textContent = "Pause";
+    }
+
     function updateDino() {
-      if (!paused && !gameOver) {
-        if (isJumping) {
-          dinoBottom += jumpSpeed;
-          jumpSpeed -= gravity;
+      if (!paused && !gameOver && isJumping) {
+        dinoBottom += jumpSpeed;
+        jumpSpeed -= gravity;
 
-          if (dinoBottom <= 0) {
-            dinoBottom = 0;
-            isJumping = false;
-          }
-
-          dino.style.bottom = dinoBottom + "px";
+        if (dinoBottom <= 0) {
+          dinoBottom = 0;
+          isJumping = false;
         }
+
+        dino.style.bottom = dinoBottom + "px";
       }
       requestAnimationFrame(updateDino);
     }
 
     function moveObstacle() {
       if (!paused && !gameOver) {
-        obstaclePos -= 5; // fart
+        obstaclePos -= obstacleSpeed;
         if (obstaclePos < -obstacle.offsetWidth) {
-          obstaclePos = gameWidth;
+          obstaclePos = game.offsetWidth;
           score++;
           scoreEl.textContent = "Poeng: " + score;
+
+          // Øk hastigheten gradvis
+          obstacleSpeed = 5 + Math.floor(score / 5); // +1 for hvert 5. poeng
         }
         obstacle.style.left = obstaclePos + "px";
 
-        // Kollisjon
         const dinoLeft = dino.offsetLeft;
         const dinoWidth = dino.offsetWidth;
         const obstacleWidth = obstacle.offsetWidth;
@@ -152,11 +173,10 @@
           obstaclePos + obstacleWidth > dinoLeft &&
           dinoBottom < obstacle.offsetHeight
         ) {
-          alert("Game Over! Poeng: " + score);
           gameOver = true;
+          gameOverEl.style.display = "block";
         }
       }
-
       requestAnimationFrame(moveObstacle);
     }
 
@@ -166,3 +186,4 @@
 
 </body>
 </html>
+
