@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spinn hjulet</title>
+  <style>
+    /* Sentrer alt på siden */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: hsl(267, 77%, 88%);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    canvas {
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .button1 {
+    background-color: #d6b5ea;
+    margin-top: 10px;}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Spinn hjulet 🎡</h1>
+<p>Trykk på knappen for å få en tilfeldig oppgave eller svare på spørsmål.</p>
+
+    <canvas id="wheel" width="300" height="300"></canvas>
+    <br />
+    <button onclick="spin()">Spinn</button>
+    <button class="button1" onclick="window.location.href='../../HTML/spill.html'">
+        Tilbake til spillside
+    </button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("wheel");
+    const ctx = canvas.getContext("2d");
+
+  
+    const items = 
+    ["Fortell en vits", 
+    "Favoritt film?", 
+    "Syng en dang", 
+    "Favorittsang?", 
+    "Alfabetet baklengs", 
+    "Favorittmat?", 
+    "Si et kompliment",
+    "Favorittårstid?"];
+    const colors = ["#C47BE4", "#7132CA"];
+
+    const center = canvas.width / 2;
+    const radius = center;
+    let angle = 0;
+
+    function drawWheel() {
+      const slice = (2 * Math.PI) / items.length;
+
+      for (let i = 0; i < items.length; i++) {
+        ctx.beginPath();
+        ctx.moveTo(center, center);
+        ctx.arc(center, center, radius, angle + i * slice, angle + (i + 1) * slice);
+        ctx.fillStyle = colors[i % colors.length];
+        ctx.fill();
+
+        // Tekst
+        ctx.save();
+        ctx.translate(center, center);
+        ctx.rotate(angle + i * slice + slice / 2);
+        ctx.textAlign = "right";
+        ctx.fillStyle = "#000";
+        ctx.font = "16px Arial";
+        ctx.fillText(items[i], radius - 10, 5);
+        ctx.restore();
+      }
+
+      // Pil på toppen
+      ctx.fillStyle = "black";
+      ctx.beginPath();
+      ctx.moveTo(center - 10, 5);
+      ctx.lineTo(center + 10, 5);
+      ctx.lineTo(center, 25);
+      ctx.fill();
+    }
+
+    function spin() {
+      const spinAngle = Math.random() * 2000 + 1000;
+      let start = null;
+
+      function animate(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        angle += 0.05;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawWheel();
+
+        if (progress < spinAngle) {
+          requestAnimationFrame(animate);
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    drawWheel();
+  </script>
+</body>
+</html>
