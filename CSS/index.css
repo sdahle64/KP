@@ -90,7 +90,7 @@ li, ul{
 
 #myLabel {
   font-size: 40px;
-  font-weight: bold; /* valgfritt, gjør teksten fetere */
+  font-weight: bold;
 }
 
 /* ---------- Icon bar ---------- */

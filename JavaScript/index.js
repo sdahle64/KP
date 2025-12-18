@@ -1,4 +1,4 @@
-// Hent elementene
+// Skriv inn navn når du kommer inn på nettsiden 
 const input = document.getElementById("username");
 const button = document.getElementById("submitName");
 const greeting = document.getElementById("greeting");
@@ -24,7 +24,8 @@ button.addEventListener('click', () => {
   table.classList.toggle('shrink');
 });
 
-// En funsjon som gjør tabellen mindre :)
+
+// GJØR TABELLEN MINDRE MED KNAPP
 function visKunEnRad() {
   const tabell = document.getElementById("minTabell");
   const rader = tabell.querySelectorAll("tr");
@@ -52,8 +53,8 @@ function visHeleTabellen() {
 // Kjør funksjonen når siden lastes
 window.onload = visKunEnRad;
 
-// Random number
 
+// RANDOM NUMBER
 const myButton = document.getElementById("myButton");
 const myLabel = document.getElementById("myLabel");
 
