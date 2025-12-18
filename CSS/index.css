@@ -188,6 +188,11 @@ li, ul{
     padding: 15px;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .underside {
     padding: 60px 20px;
   }
