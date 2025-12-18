@@ -88,6 +88,11 @@ li, ul{
   text-decoration: none;
 }
 
+#myLabel {
+  font-size: 40px;
+  font-weight: bold; /* valgfritt, gjør teksten fetere */
+}
+
 /* ---------- Icon bar ---------- */
 .icon-bar {
   display: flex;
@@ -122,8 +127,8 @@ li, ul{
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 10px;
+  gap: 20px;
+  padding: 30px;
   margin-left: 10px;
   margin-right: 10px;
 }
