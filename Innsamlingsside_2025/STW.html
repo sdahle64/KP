@@ -12,7 +12,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f4f4f4;
+      background: #FFE08F;
       font-family: Arial, sans-serif;
     }
 
@@ -36,8 +36,10 @@
 </head>
 <body>
   <div class="container">
+    <h1>Spinn the Wheel🇺🇬</h1>
+    <p>Spill og vinn premier!</p>
     <canvas id="wheel" width="300" height="300"></canvas>
-    <br />
+    <br/>
     <button onclick="spin()">Spinn</button>
   </div>
 
@@ -46,8 +48,14 @@
     const ctx = canvas.getContext("2d");
 
     // Endre disse selv 👇
-    const items = ["A", "B", "C", "D"];
-    const colors = ["#ff7675", "#74b9ff", "#55efc4", "#ffeaa7"];
+    const items = [
+      "Et eple", 
+      "Såpeboble", 
+      "Firkløver", 
+      "Sokker",
+      "En appelsin",
+      "Matboks"];
+    const colors = ["#ff7675", "#FF5555"];
 
     const center = canvas.width / 2;
     const radius = center;
